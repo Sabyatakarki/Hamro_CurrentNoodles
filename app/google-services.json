@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "495094549344",
+    "project_id": "hamro-current-noodles",
+    "storage_bucket": "hamro-current-noodles.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495094549344:android:d41b45a63f3f11330bec05",
+        "android_client_info": {
+          "package_name": "com.example.hamro_currentnoodles"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsLgPQ30z8Dy-kZgWjlMVFZphBTCePRjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
