@@ -1,5 +1,8 @@
 package com.example.hamro_currentnoodles.model
 
+import android.os.Parcel
+import android.os.Parcelable
+
 class UserModel {
 
     data class UserModel(
@@ -9,14 +12,14 @@ class UserModel {
         var address: String = "",
         var contact: String = "",
         var email: String = "",
-    ): Parcelable{
+    ) : Parcelable {
         constructor(parcel: Parcel) : this(
-            parcel.readString() ?:"",
-            parcel.readString() ?:"",
-            parcel.readString()?:"",
-            parcel.readString()?:"",
-            parcel.readString()?:"",
-            parcel.readString()?:""
+            parcel.readString() ?: "",
+            parcel.readString() ?: "",
+            parcel.readString() ?: "",
+            parcel.readString() ?: "",
+            parcel.readString() ?: "",
+            parcel.readString() ?: ""
         ) {
         }
 
@@ -41,4 +44,6 @@ class UserModel {
             override fun newArray(size: Int): Array<UserModel?> {
                 return arrayOfNulls(size)
             }
+        }
+    }
 }
