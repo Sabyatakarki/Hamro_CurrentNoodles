@@ -61,13 +61,13 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/baseline_add_24"
                 android:text="Button"
-                app:layout_constraintBottom_toBottomOf="@+id/quantity"
-                app:layout_constraintEnd_toStartOf="@+id/quantity"
-                app:layout_constraintTop_toTopOf="@+id/quantity"
+                app:layout_constraintBottom_toBottomOf="@+id/cartItemQuantity"
+                app:layout_constraintEnd_toStartOf="@+id/cartItemQuantity"
+                app:layout_constraintTop_toTopOf="@+id/cartItemQuantity"
                 app:layout_constraintVertical_bias="0.482" />
 
             <TextView
-                android:id="@+id/quantity"
+                android:id="@+id/cartItemQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
@@ -85,7 +85,7 @@
                 android:background="@drawable/img"
                 android:text="Button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/quantity"
+                app:layout_constraintStart_toStartOf="@+id/cartItemQuantity"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
