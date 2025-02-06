@@ -10,24 +10,22 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.hamro_currentnoodles.R
 import com.example.hamro_currentnoodles.databinding.ActivityNavigationBinding
-import com.example.hamro_currentnoodles.ui.fragment.HomeFragment
 import com.example.hamro_currentnoodles.ui.fragment.ProductsFragment
 import com.example.hamro_currentnoodles.ui.fragment.ProfileFragment
 import com.example.hamro_currentnoodles.ui.fragment.SearchFragment
+import com.example.hamro_currentnoodles.ui.fragmentNo.HomeFragment
 
 class NavigationActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityNavigationBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         binding = ActivityNavigationBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-
 
         replaceFragment(HomeFragment())
 
@@ -61,4 +59,5 @@ class NavigationActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 }
+
 

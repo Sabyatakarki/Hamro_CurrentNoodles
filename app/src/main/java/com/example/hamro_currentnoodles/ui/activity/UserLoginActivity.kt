@@ -26,8 +26,6 @@ class UserLoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        var email = binding.username.text.toString()
-        var password = binding.password.text.toString()
 
 
 

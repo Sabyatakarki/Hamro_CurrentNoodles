@@ -1,4 +1,4 @@
-package com.example.hamro_currentnoodles.ui.fragment
+package com.example.hamro_currentnoodles.ui.fragmentNo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,8 +12,8 @@ import com.example.hamro_currentnoodles.adapter.NoodleAdapter
 import com.example.hamro_currentnoodles.model.Noodle
 
 class HomeFragment : Fragment() {
-     lateinit var recyclerView: RecyclerView
-     lateinit var adapter: NoodleAdapter
+    lateinit var recyclerView: RecyclerView
+    lateinit var adapter: NoodleAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +33,6 @@ class HomeFragment : Fragment() {
             Noodle("Hot & Spicy", R.drawable.hot, "NPR 50"),
             Noodle("Lemon flavor", R.drawable.lemom, "NPR 55")
         )
-
 
         // Set Adapter
         adapter = NoodleAdapter(noodleList)

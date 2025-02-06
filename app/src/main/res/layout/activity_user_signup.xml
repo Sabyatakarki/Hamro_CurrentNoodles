@@ -47,8 +47,7 @@
             android:layout_width="304dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedittext"
-            android:layout_gravity="center"
-            android:hint="Enter here" />
+            android:layout_gravity="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -78,8 +77,7 @@
             android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedittext"
-            android:layout_gravity="center"
-            android:hint="Enter here" />
+            android:layout_gravity="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -109,8 +107,7 @@
             android:layout_width="306dp"
             android:background="@drawable/roundedittext"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="Enter here" />
+            android:layout_gravity="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

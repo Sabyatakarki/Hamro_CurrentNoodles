@@ -22,7 +22,7 @@ class StartActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener{
             val intent = Intent(
-                this,StartActivity::class.java)
+                this,UserLoginActivity::class.java)
             startActivity(intent)
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
