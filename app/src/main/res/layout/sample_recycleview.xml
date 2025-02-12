@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragmentNo.HomeFragment">
+
+    <ImageView
+        android:id="@+id/chesseballs"
+        android:layout_width="171dp"
+        android:layout_height="190dp"
+        android:src="@drawable/cheesyballs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Snacks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="28dp"
+        android:text="Cheese Balls"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/chesseballs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/caption"
+        android:layout_width="221dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="7dp"
+        android:text="The irresistible current cheese balls, your delectable and satisfying choice for delightful lite bite snacks."
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/chesseballs"
+        app:layout_constraintTop_toBottomOf="@id/Snacks" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
