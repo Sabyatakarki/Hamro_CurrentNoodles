@@ -7,19 +7,21 @@
     android:padding="10dp">
 
     <!-- Image -->
+
+    <!-- Noodle Name -->
     <ImageView
         android:id="@+id/noodleImage"
-        android:layout_width="174dp"
-        android:layout_height="131dp"
+        android:layout_width="153dp"
+        android:layout_height="134dp"
         android:scaleType="centerCrop"
         android:src="@drawable/pinkcurrent" />
 
-    <!-- Noodle Name -->
     <TextView
         android:id="@+id/noodleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="4dp"
+        android:textColor="@color/green"
         android:layout_gravity="center"
         android:text="Cheese Flavour"
         android:textSize="16sp"
@@ -33,5 +35,5 @@
         android:layout_gravity="center"
         android:text="Npr. 50"
         android:textSize="14sp"
-        android:textColor="@android:color/black"/>
+        android:textColor="@color/red"/>
 </LinearLayout>

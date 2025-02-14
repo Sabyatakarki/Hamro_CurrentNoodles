@@ -33,7 +33,7 @@
         android:background="@drawable/shape"
         android:iconifiedByDefault="false"
         android:queryBackground="@android:color/transparent"
-        android:queryHint="Which Pizza Today?"
+        android:queryHint="Search your current products"
         android:searchIcon="@drawable/baseline_search_24"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
         app:layout_constraintEnd_toEndOf="parent"

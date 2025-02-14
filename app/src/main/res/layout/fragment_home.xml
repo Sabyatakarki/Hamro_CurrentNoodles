@@ -16,35 +16,34 @@
             android:id="@+id/welcomeTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
             android:text="Welcome!"
             android:textColor="@color/green"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="114dp"
-            android:layout_height="37dp"
-            android:layout_marginTop="33dp"
-            android:layout_marginEnd="268dp"
-            android:text=" Top picks"
+            android:layout_width="241dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="28dp"
+            android:text=" Her are our top picks"
             android:textColor="@color/green"
             android:textSize="23sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/horizontalRecyclerView"
             android:layout_width="399dp"
             android:layout_height="230dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="3dp"
-            android:background="@color/beige"
+            android:layout_marginEnd="4dp"
             android:scrollbars="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
@@ -54,71 +53,20 @@
             android:id="@+id/purchaseTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="12dp"
-            android:text="Puchase your favourite CurrentNoodles"
+            android:text="Get favourite CurrentNoodles"
             android:textColor="@color/green"
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeTxt" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="247dp"
-            android:layout_height="129dp"
-            android:layout_margin="12dp"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="12dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/purchaseTxt">
-
-            <LinearLayout
-                android:id="@+id/carview1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/beige"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/HotSpicy"
-                    android:layout_width="229dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:text="Hot and Spicy"
-                    android:textAlignment="center"
-                    android:textColor="@color/red"
-                    android:textSize="25sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/Caption"
-                    android:layout_width="208dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Starting from Npr 50 only."
-                    android:textAlignment="center"
-                    android:textSize="20sp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <ImageView
-            android:id="@+id/Chilly"
-            android:layout_width="136dp"
-            android:layout_height="138dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/purchaseTxt"
-            app:srcCompat="@drawable/chiily" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <TextView
             android:id="@+id/Others"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="31dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="28dp"
             android:text="Other Current Snacks"
             android:textColor="@color/green"
             android:textSize="23sp"
@@ -136,6 +84,45 @@
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Others" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="12dp"
+            android:text="Prepare less than under 5 min"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/Chilly"
+            app:layout_constraintTop_toBottomOf="@+id/purchaseTxt" />
+
+        <ImageView
+            android:id="@+id/Chilly"
+            android:layout_width="118dp"
+            android:layout_height="126dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@+id/purchaseTxt"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:srcCompat="@drawable/chiily" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="334dp"
+            android:layout_height="79dp"
+            android:layout_marginEnd="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/yasodafoods"
+            tools:layout_editor_absoluteY="135dp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="125dp"
+            android:layout_height="108dp"
+            app:srcCompat="@drawable/headimg"
+            tools:layout_editor_absoluteX="197dp"
+            tools:layout_editor_absoluteY="16dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
