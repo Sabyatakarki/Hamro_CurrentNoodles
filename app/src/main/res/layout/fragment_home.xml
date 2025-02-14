@@ -29,14 +29,13 @@
             android:id="@+id/textView9"
             android:layout_width="241dp"
             android:layout_height="28dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="60dp"
             android:text=" Her are our top picks"
             android:textColor="@color/green"
             android:textSize="23sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/horizontalRecyclerView"
@@ -53,13 +52,13 @@
             android:id="@+id/purchaseTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="12dp"
             android:text="Get favourite CurrentNoodles"
             android:textColor="@color/green"
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTxt" />
 
         <TextView
             android:id="@+id/Others"
@@ -89,39 +88,41 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
             android:text="Prepare less than under 5 min"
             android:textColor="@color/green"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/Chilly"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/purchaseTxt" />
 
         <ImageView
             android:id="@+id/Chilly"
-            android:layout_width="118dp"
-            android:layout_height="126dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toEndOf="@+id/purchaseTxt"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
             app:srcCompat="@drawable/chiily" />
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="334dp"
-            android:layout_height="79dp"
-            android:layout_marginEnd="60dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/yasodafoods"
-            tools:layout_editor_absoluteY="135dp" />
+            android:layout_width="259dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toEndOf="@+id/Chilly"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:srcCompat="@drawable/yasodafoods" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="125dp"
-            android:layout_height="108dp"
-            app:srcCompat="@drawable/headimg"
-            tools:layout_editor_absoluteX="197dp"
-            tools:layout_editor_absoluteY="16dp" />
+            android:layout_width="118dp"
+            android:layout_height="146dp"
+            android:layout_marginStart="1dp"
+            app:layout_constraintStart_toEndOf="@+id/purchaseTxt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/headimg" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
