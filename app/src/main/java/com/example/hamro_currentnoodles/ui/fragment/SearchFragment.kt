@@ -16,7 +16,7 @@ class SearchFragment : Fragment() {
     private lateinit var  adapter : MenuAdapter
     private val originalmenuitemName = listOf("Chessy flavor ", "3x spipcy", "cheese balls", "Potato Cracker", "2x spicy", "Chicken Noodles", "Achari sticks",
         "Hot Sticks", "Hot and spicy", "Spicy ChesseBalls")
-    private val originalmenufoodprice = listOf("Rs 650", "Rs 750", "Rs 1050", "Rs 750", "Rs 950", "Rs 750", "Rs 850", "Rs 850", "Rs 950", "Rs 950")
+    private val originalmenufoodprice = listOf("Rs 50", "Rs 70", "Rs 50", "Rs 50", "Rs 55", "Rs 50", "Rs 55", "Rs 60", "Rs 50", "Rs 60")
     private val originalmenuImage = listOf(
         R.drawable.pinkcurrent,
         R.drawable.threex,
