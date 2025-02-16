@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/Inputtext1"
+            android:id="@+id/Email"
             android:layout_width="304dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedittext"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/Inputtxt2"
+            android:id="@+id/UsernameS"
             android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedittext"
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Inputtxt3"
+        android:id="@+id/textInputLayout5"
         android:layout_width="423dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/Inputtxt6"
+            android:id="@+id/PassS"
             android:layout_width="306dp"
             android:background="@drawable/roundedittext"
             android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/SignUpButton"
         android:layout_width="135dp"
         android:layout_height="58dp"
         android:layout_marginStart="136dp"
@@ -122,6 +122,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Inputtxt3" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

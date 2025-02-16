@@ -30,7 +30,7 @@ class UserLoginActivity : AppCompatActivity() {
             val password = binding.password.text.toString().trim()
 
             if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Fields cannot be empty!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Username and Password is empty", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, NavigationActivity::class.java)

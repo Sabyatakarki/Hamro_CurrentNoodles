@@ -32,8 +32,8 @@ class HomeFragment : Fragment() {
         // Horizontal noodles list without description
         val horizontalNoodleList = listOf(
             Noodle("Cheese flavor", R.drawable.pinkcurrent, "NPR 50"),
+            Noodle("3x spicy", R.drawable.threex, "NPR 60"),
             Noodle("Spicy Sticks", R.drawable.hotsticks, "NPR 50"),
-            Noodle("3x Spicy", R.drawable.threex, "NPR 70"),
             Noodle("Hot & Spicy", R.drawable.hot, "NPR 50"),
             Noodle("Lemon flavor", R.drawable.lemom, "NPR 55")
         )

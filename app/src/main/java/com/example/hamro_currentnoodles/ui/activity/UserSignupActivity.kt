@@ -1,8 +1,7 @@
 package com.example.hamro_currentnoodles.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,7 +10,7 @@ import com.example.hamro_currentnoodles.R
 import com.example.hamro_currentnoodles.databinding.ActivityUserSignupBinding
 
 class UserSignupActivity : AppCompatActivity() {
-    lateinit var binding:ActivityUserSignupBinding
+    private lateinit var binding: ActivityUserSignupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +19,20 @@ class UserSignupActivity : AppCompatActivity() {
         binding = ActivityUserSignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setContentView(R.layout.activity_user_signup)
+        // Handle Sign Up Button Click
+        binding.SignUpButton.setOnClickListener {
+            val email = binding.textInputLayout3.editText?.text.toString().trim()
+            val username = binding.textInputLayout4.editText?.text.toString().trim()
+            val password = binding.textInputLayout5.editText?.text.toString().trim()
+
+            if (email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show()
+                finish()  // Close this activity and go back to login
+            }
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
