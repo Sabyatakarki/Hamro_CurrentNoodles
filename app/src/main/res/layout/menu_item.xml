@@ -58,26 +58,13 @@
                 android:id="@+id/menuprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="32dp"
                 android:text="Npr 50"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.58"
-                app:layout_constraintStart_toEndOf="@+id/menufooditem"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/menuImage"
+                app:layout_constraintTop_toBottomOf="@+id/menufooditem" />
 
-            <TextView
-                android:id="@+id/menuaddtocart"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="40dp"
-                android:background="@color/beige"
-                android:gravity="center"
-                android:text="Add to Cart"
-                app:layout_constraintEnd_toEndOf="@+id/menuprice"
-                app:layout_constraintHorizontal_bias="0.54"
-                app:layout_constraintStart_toStartOf="@+id/menuprice"
-                app:layout_constraintTop_toTopOf="@+id/menuprice" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

@@ -117,7 +117,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/green"
-        android:text="Button"
+        android:text="SignUp"
         android:textColor="@color/beige"
         android:textSize="20sp"
         android:textStyle="bold"
