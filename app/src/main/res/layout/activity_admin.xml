@@ -8,19 +8,6 @@
     android:background="@drawable/current"
     tools:context=".ui.activity.AdminActivity">
 
-    <TextView
-        android:id="@+id/Welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="108dp"
-        android:text="Welcome Admin"
-        android:textColor="@color/green"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
@@ -174,7 +161,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/LoggOut"
+                android:id="@+id/addImg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="63dp"
@@ -184,19 +171,16 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/LogoutTxt"
+                android:id="@+id/addTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="43dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="40dp"
                 android:text="Add Item"
                 android:textColor="@color/green"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/LoggOut" />
+                app:layout_constraintTop_toBottomOf="@+id/addImg" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        
-        
         
     </androidx.cardview.widget.CardView>
 
@@ -215,7 +199,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/LoggOut"
+            android:id="@+id/ProfileImg"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="63dp"
@@ -225,7 +209,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/LogoutTxt"
+            android:id="@+id/ProfileTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -234,7 +218,7 @@
             android:textColor="@color/green"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LoggOut" />
+            app:layout_constraintTop_toBottomOf="@+id/ProfileImg" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -278,4 +262,18 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/Welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="391dp"
+        android:text="Welcome Admin"
+        android:textColor="@color/green"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

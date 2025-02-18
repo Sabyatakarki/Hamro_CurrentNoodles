@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.`Add-itemActivity`">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="108dp"
+                android:text="Add Products"
+                android:textColor="@color/green"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/enterFoodName"
+                android:layout_width="385dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/roundedittext"
+                android:elevation="5dp"
+                android:hint="Enter new Product"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+
+            <EditText
+                android:id="@+id/enterFoodPrice"
+                android:layout_width="0dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/roundedittext"
+                android:elevation="5dp"
+                android:hint="Enter product price"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/enterFoodName"
+                app:layout_constraintStart_toStartOf="@+id/enterFoodName"
+                app:layout_constraintTop_toBottomOf="@+id/enterFoodName" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="327dp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="keep short  Description"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="427dp" />
+
+            <EditText
+                android:id="@+id/descriptions"
+                android:layout_width="396dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:textAlignment="center"
+                android:background="@drawable/roundedittext"
+                android:text="Sweet and savory taste"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/textView22"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView22"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="157dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="126dp"
+                android:background="@drawable/shape"
+                android:text="Add Product"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptions" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="182dp"
+                android:layout_height="150dp"
+                android:src="@drawable/cover"
+                tools:layout_editor_absoluteX="114dp"
+                tools:layout_editor_absoluteY="261dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
