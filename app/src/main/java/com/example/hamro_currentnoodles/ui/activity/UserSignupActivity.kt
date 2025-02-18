@@ -9,10 +9,10 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.hamro_currentnoodles.R
 import com.example.hamro_currentnoodles.databinding.ActivityUserSignupBinding
 
-class UserSignupActivity : AppCompatActivity() {
+class UserSignupActivity : AppCompatActivity(){
     private lateinit var binding: ActivityUserSignupBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
