@@ -23,7 +23,7 @@
             android:background="@drawable/circular_shape"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/profilepicture"
+            android:src="@drawable/imageplaceholder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"

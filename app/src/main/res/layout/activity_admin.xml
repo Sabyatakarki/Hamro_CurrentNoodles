@@ -156,7 +156,9 @@
         app:cardCornerRadius="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/AddItem"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -194,33 +196,34 @@
         app:layout_constraintStart_toEndOf="@+id/cardView3"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/AdminProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/ProfileImg"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="63dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/baseline_person_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/ProfileImg"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="63dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/baseline_person_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/ProfileTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:text="Admin Profile"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ProfileImg" />
+            <TextView
+                android:id="@+id/ProfileTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="Admin Profile"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProfileImg" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -234,6 +237,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/LogOut"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -267,8 +271,8 @@
         android:id="@+id/Welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="391dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="408dp"
         android:text="Welcome Admin"
         android:textColor="@color/green"
         android:textSize="26sp"
