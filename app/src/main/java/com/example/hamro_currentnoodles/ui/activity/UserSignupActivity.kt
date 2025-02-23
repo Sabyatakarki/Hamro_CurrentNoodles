@@ -8,35 +8,64 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.hamro_currentnoodles.R
 import com.example.hamro_currentnoodles.databinding.ActivityUserSignupBinding
+import com.example.hamro_currentnoodles.model.UserModel
+import com.example.hamro_currentnoodles.repository.UserRepositoryImpl
+import com.example.hamro_currentnoodles.viewmodel.UserViewModel
 
-class UserSignupActivity : AppCompatActivity(){
-    private lateinit var binding: ActivityUserSignupBinding
+class UserSignupActivity : AppCompatActivity() {
+    lateinit var binding: ActivityUserSignupBinding
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    lateinit var userViewModel: UserViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
 
         binding = ActivityUserSignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Handle Sign Up Button Click
+        var repo = UserRepositoryImpl()
+        userViewModel = UserViewModel(repo)
+
         binding.SignUpButton.setOnClickListener {
-            val email = binding.textInputLayout3.editText?.text.toString().trim()
-            val username = binding.textInputLayout4.editText?.text.toString().trim()
-            val password = binding.textInputLayout5.editText?.text.toString().trim()
 
-            if (email.isEmpty() || username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show()
-                finish()  // Close this activity and go back to login
+            var email = binding.Email.text.toString()
+            var username = binding.UsernameS.text.toString()
+            var password = binding.PassS.text.toString()
+
+            userViewModel.signup(email, password) { success, message, userId ->
+                if (success) {
+                    var userModel = UserViewModel(
+                        userId,
+                        username,email
+                    )
+                    userViewModel.addUserToDatabase(userId, UserModel()) { success, message ->
+                        if (success) {
+                            Toast.makeText(
+                                this@UserSignupActivity,
+                                message, Toast.LENGTH_LONG
+                            ).show()
+                        } else {
+                            Toast.makeText(
+                                this@UserSignupActivity,
+                                message, Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+                } else {
+                    Toast.makeText(
+                        this@UserSignupActivity,
+                        message, Toast.LENGTH_LONG
+                    ).show()
+                }
             }
-        }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
         }
     }
 }

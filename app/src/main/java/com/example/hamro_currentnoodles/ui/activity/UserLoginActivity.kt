@@ -9,9 +9,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.hamro_currentnoodles.R
 import com.example.hamro_currentnoodles.databinding.ActivityUserLoginBinding
+import com.example.hamro_currentnoodles.repository.UserRepositoryImpl
+import com.example.hamro_currentnoodles.viewmodel.UserViewModel
 
 class UserLoginActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityUserLoginBinding
+
+    lateinit var userViewModel: UserViewModel
+    lateinit var binding: ActivityUserLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,23 +24,31 @@ class UserLoginActivity : AppCompatActivity() {
         binding = ActivityUserLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var repo = UserRepositoryImpl()
+        userViewModel = UserViewModel(repo)
+
+        binding.login.setOnClickListener {
+            var username = binding.username.text.toString()
+            var password = binding.password.text.toString()
+
+            userViewModel.login(username, password) { success, message ->
+                if (success) {
+                    var intent = Intent(this@UserLoginActivity,
+                        NavigationActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this@UserLoginActivity,
+                        message, Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
         binding.btnSignUp.setOnClickListener {
             val intent = Intent(this, UserSignupActivity::class.java)
             startActivity(intent)
         }
 
-        binding.login.setOnClickListener {
-            val username = binding.username.text.toString().trim()
-            val password = binding.password.text.toString().trim()
 
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Username and Password is empty", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, NavigationActivity::class.java)
-                startActivity(intent)
-            }
-        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
