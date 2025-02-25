@@ -24,21 +24,28 @@ class UserLoginActivity : AppCompatActivity() {
         binding = ActivityUserLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var repo = UserRepositoryImpl()
+        val repo = UserRepositoryImpl()
         userViewModel = UserViewModel(repo)
 
         binding.login.setOnClickListener {
-            var username = binding.username.text.toString()
-            var password = binding.password.text.toString()
+            val username = binding.username.text.toString()
+            val password = binding.password.text.toString()
 
             userViewModel.login(username, password) { success, message ->
                 if (success) {
-                    var intent = Intent(this@UserLoginActivity,
-                        NavigationActivity::class.java)
+                    val selectedId = binding.radioGroup.checkedRadioButtonId
+
+                    val intent = when (selectedId) {
+                        R.id.UserRadio -> Intent(this@UserLoginActivity, NavigationActivity::class.java)
+                        R.id.AdminRadio-> Intent(this@UserLoginActivity, AdminActivity::class.java)
+                        else -> {
+                            Toast.makeText(this@UserLoginActivity, "Please select User or Admin", Toast.LENGTH_LONG).show()
+                            return@login
+                        }
+                    }
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@UserLoginActivity,
-                        message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@UserLoginActivity, message, Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -47,8 +54,6 @@ class UserLoginActivity : AppCompatActivity() {
             val intent = Intent(this, UserSignupActivity::class.java)
             startActivity(intent)
         }
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
