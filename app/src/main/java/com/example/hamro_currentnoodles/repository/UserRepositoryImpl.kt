@@ -1,6 +1,5 @@
 package com.example.hamro_currentnoodles.repository
 
-import android.widget.Toast
 import com.example.hamro_currentnoodles.model.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -29,6 +28,7 @@ class UserRepositoryImpl : UserRepository {
     override fun signup(
         username: String,
         password: String,
+        password1: String,
         callback: (Boolean, String, String) -> Unit
     ) {
         auth.createUserWithEmailAndPassword(username, password).addOnCompleteListener {

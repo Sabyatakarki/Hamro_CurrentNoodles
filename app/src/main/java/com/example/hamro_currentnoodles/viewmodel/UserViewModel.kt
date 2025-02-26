@@ -7,18 +7,18 @@ import com.google.firebase.auth.FirebaseUser
 class UserViewModel(var repo: UserRepository) {
 
     fun login(
-        email: String, password: String,
+        username: String, password: String,
         callback: (Boolean, String) -> Unit
     ) {
-        repo.login(email, password, callback)
+        repo.login(username, password, callback)
     }
 
 
     fun signup(
-        email: String, password: String,
+        email: String,username:String, password: String,
         callback: (Boolean, String, String) -> Unit
     ) {
-        repo.signup(email, password, callback)
+        repo.signup(email,username,password,callback)
     }
 
     fun addUserToDatabase(

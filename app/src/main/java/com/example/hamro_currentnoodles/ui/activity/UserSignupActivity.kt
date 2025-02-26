@@ -34,11 +34,12 @@ class UserSignupActivity : AppCompatActivity() {
             var username = binding.UsernameS.text.toString()
             var password = binding.PassS.text.toString()
 
-            userViewModel.signup(email, password) { success, message, userId ->
+            userViewModel.signup(email,username,password) { success, message, userId ->
                 if (success) {
                     var userModel = UserViewModel(
                         userId,
-                        username,email
+                        username,
+                        email
                     )
                     userViewModel.addUserToDatabase(userId, UserModel()) { success, message ->
                         if (success) {
