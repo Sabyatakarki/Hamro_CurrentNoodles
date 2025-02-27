@@ -34,19 +34,16 @@ class UserSignupActivity : AppCompatActivity() {
             var username = binding.UsernameS.text.toString()
             var password = binding.PassS.text.toString()
 
-            userViewModel.signup(email,username,password) { success, message, userId ->
-                if (success) {
-                    var userModel = UserViewModel(
-                        userId,
-                        username,
-                        email
-                    )
-                    userViewModel.addUserToDatabase(userId, UserModel()) { success, message ->
+            userViewModel.signup(email,password) { success, message, userId ->
+                if (success){
+                    var userModel =  UserModel(userId,username,email)
+                    userViewModel.addUserToDatabase(userId, userModel) { success, message ->
                         if (success) {
                             Toast.makeText(
                                 this@UserSignupActivity,
                                 message, Toast.LENGTH_LONG
                             ).show()
+                            finish()
                         } else {
                             Toast.makeText(
                                 this@UserSignupActivity,

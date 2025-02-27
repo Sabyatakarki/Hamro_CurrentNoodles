@@ -12,12 +12,10 @@ import com.example.hamro_currentnoodles.R
 import com.example.hamro_currentnoodles.ui.activity.UserLoginActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
@@ -27,7 +25,6 @@ class ProfileFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
         auth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().getReference("Users")
 
         val usernameInput = view.findViewById<TextInputEditText>(R.id.textInputLayout6)
         val emailInput = view.findViewById<TextInputEditText>(R.id.textInputLayout7)
@@ -40,15 +37,15 @@ class ProfileFragment : Fragment() {
             val email = emailInput.text.toString()
             val phone = phoneInput.text.toString()
 
-            if (username.isEmpty() || email.isEmpty() || phone.isEmpty()) {
-                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
-            } else {
+            if (username.isNotEmpty() && email.isNotEmpty() && phone.isNotEmpty()) {
                 saveUserData(username, email, phone)
+            } else {
+                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
             }
         }
 
         logOutButton.setOnClickListener {
-            deleteUserDataAndLogout()
+            logoutUser()
         }
 
         return view
@@ -56,38 +53,27 @@ class ProfileFragment : Fragment() {
 
     private fun saveUserData(username: String, email: String, phone: String) {
         val userId = auth.currentUser?.uid ?: return
-        val userMap = mapOf(
-            "username" to username,
-            "email" to email,
-            "phone" to phone
-        )
+        val database = FirebaseDatabase.getInstance().getReference("Users")
+
+        val userMap = mapOf("username" to username, "email" to email, "phone" to phone)
 
         database.child(userId).setValue(userMap)
             .addOnSuccessListener {
-                Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Profile Saved", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to update", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Failed to Save", Toast.LENGTH_SHORT).show()
             }
     }
 
-    private fun deleteUserDataAndLogout() {
+    private fun logoutUser() {
         val userId = auth.currentUser?.uid ?: return
+        val database = FirebaseDatabase.getInstance().getReference("Users")
 
-        // Delete user data from Firebase
         database.child(userId).removeValue()
-            .addOnSuccessListener {
-                // Sign out the user
-                auth.signOut()
+        auth.signOut()
 
-                // Navigate to Login Activity
-                val intent = Intent(requireContext(), UserLoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-                Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to log out", Toast.LENGTH_SHORT).show()
-            }
+        startActivity(Intent(requireContext(), UserLoginActivity::class.java))
+        requireActivity().finish()
     }
 }

@@ -7,7 +7,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class UserRepositoryImpl : UserRepository {
-    lateinit var auth: FirebaseAuth
+     var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     var database: FirebaseDatabase = FirebaseDatabase.getInstance()
 
@@ -26,12 +26,11 @@ class UserRepositoryImpl : UserRepository {
     }
 
     override fun signup(
-        username: String,
+        email: String,
         password: String,
-        password1: String,
         callback: (Boolean, String, String) -> Unit
     ) {
-        auth.createUserWithEmailAndPassword(username, password).addOnCompleteListener {
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 callback(
                     true, "Registration success",

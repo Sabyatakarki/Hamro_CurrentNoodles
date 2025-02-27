@@ -15,10 +15,10 @@ class UserViewModel(var repo: UserRepository) {
 
 
     fun signup(
-        email: String,username:String, password: String,
+        email: String, password: String,
         callback: (Boolean, String, String) -> Unit
     ) {
-        repo.signup(email,username,password,callback)
+        repo.signup(email,password,callback)
     }
 
     fun addUserToDatabase(

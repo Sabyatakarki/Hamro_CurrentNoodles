@@ -7,9 +7,9 @@ interface UserRepository{
 
     fun login(  username:String,password:String,callback:(Boolean,String)->Unit)
     fun signup(
-        username: String,
+        email: String,
         password: String,
-        password1: String,
+
         callback: (Boolean, String, String) -> Unit
     )
     fun addUserToDatabase(userId:String,userModel:UserModel,callback: (Boolean, String) -> Unit)
