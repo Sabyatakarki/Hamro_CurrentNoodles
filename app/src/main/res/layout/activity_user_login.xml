@@ -73,18 +73,22 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="2dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTxt">
+        app:layout_constraintTop_toBottomOf="@+id/passwordTxt"
+        app:endIconMode="password_toggle"
+        app:endIconDrawable="@drawable/baseline_remove_red_eye_24">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedittext"
-            android:layout_gravity="center"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedittext"
+        android:layout_gravity="center"
+        android:inputType="textPassword" /> <!-- Initially password is hidden -->
 
-    <TextView
+</com.google.android.material.textfield.TextInputLayout>
+
+
+<TextView
         android:id="@+id/passwordTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
