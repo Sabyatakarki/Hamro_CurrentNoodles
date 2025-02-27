@@ -1,79 +1,65 @@
 package com.example.hamro_currentnoodles.ui.fragment
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
-import com.example.hamro_currentnoodles.R
-import com.example.hamro_currentnoodles.ui.activity.UserLoginActivity
-import com.google.android.material.textfield.TextInputEditText
+import androidx.fragment.app.Fragment
+import com.example.hamro_currentnoodles.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var auth: FirebaseAuth
+    private lateinit var binding: FragmentProfileBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var databaseReference: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-        auth = FirebaseAuth.getInstance()
+        // Initialize Firebase Auth and Database Reference
+        firebaseAuth = FirebaseAuth.getInstance()
+        databaseReference = FirebaseDatabase.getInstance().getReference("users")
 
-        val usernameInput = view.findViewById<TextInputEditText>(R.id.textInputLayout6)
-        val emailInput = view.findViewById<TextInputEditText>(R.id.textInputLayout7)
-        val phoneInput = view.findViewById<TextInputEditText>(R.id.textInputLayout8)
-        val saveButton = view.findViewById<Button>(R.id.SaveButton)
-        val logOutButton = view.findViewById<Button>(R.id.logOut)
+        // Fetch user data from Firebase
+        fetchUserData()
 
-        saveButton.setOnClickListener {
-            val username = usernameInput.text.toString()
-            val email = emailInput.text.toString()
-            val phone = phoneInput.text.toString()
-
-            if (username.isNotEmpty() && email.isNotEmpty() && phone.isNotEmpty()) {
-                saveUserData(username, email, phone)
-            } else {
-                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        logOutButton.setOnClickListener {
-            logoutUser()
-        }
-
-        return view
+        return binding.root
     }
 
-    private fun saveUserData(username: String, email: String, phone: String) {
-        val userId = auth.currentUser?.uid ?: return
-        val database = FirebaseDatabase.getInstance().getReference("Users")
+    private fun fetchUserData() {
+        val userId = firebaseAuth.currentUser?.uid
 
-        val userMap = mapOf("username" to username, "email" to email, "phone" to phone)
+        // Check if the user is logged in
+        if (userId != null) {
+            // Fetch the data from Firebase Database under the user's ID
+            databaseReference.child(userId).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        // Get user data from Firebase and set it to the views
+                        binding.ProfileEmail.setText(snapshot.child("email").value.toString())
+                        binding.ProfileUsername.setText(snapshot.child("username").value.toString())
+                        binding.ProfilePassword.setText(snapshot.child("password").value.toString()) // Assuming you save password (not recommended, see below)
+                    } else {
+                        Toast.makeText(context, "No data found for this user", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-        database.child(userId).setValue(userMap)
-            .addOnSuccessListener {
-                Toast.makeText(requireContext(), "Profile Saved", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to Save", Toast.LENGTH_SHORT).show()
-            }
-    }
-
-    private fun logoutUser() {
-        val userId = auth.currentUser?.uid ?: return
-        val database = FirebaseDatabase.getInstance().getReference("Users")
-
-        database.child(userId).removeValue()
-        auth.signOut()
-
-        startActivity(Intent(requireContext(), UserLoginActivity::class.java))
-        requireActivity().finish()
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(context, "Failed to load user data", Toast.LENGTH_SHORT).show()
+                }
+            })
+        } else {
+            Toast.makeText(context, "User not logged in", Toast.LENGTH_SHORT).show()
+        }
     }
 }

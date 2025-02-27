@@ -33,7 +33,7 @@ class UserRepositoryImpl : UserRepository {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 callback(
-                    true, "Registration success",
+                    true, "SignUp success",
                     auth.currentUser?.uid.toString()
                 )
             } else {
@@ -49,7 +49,7 @@ class UserRepositoryImpl : UserRepository {
     ) {
         ref.child(userId).setValue(userModel).addOnCompleteListener {
             if (it.isSuccessful) {
-                callback(true, "Registration success")
+                callback(true, "SignUp success")
             } else {
                 callback(false, it.exception?.message.toString())
             }
