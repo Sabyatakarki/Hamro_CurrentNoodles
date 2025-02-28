@@ -8,7 +8,6 @@
     android:background="@drawable/current"
     tools:context=".ui.activity.StartActivity">
 
-
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
@@ -20,7 +19,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -36,7 +35,7 @@
             android:layout_width="297dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedittext"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -161,7 +160,7 @@
             android:textColor="@color/green"
             android:textSize="15sp"
             android:layout_marginEnd="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <RadioButton
             android:id="@+id/AdminRadio"
