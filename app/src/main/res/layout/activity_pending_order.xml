@@ -5,38 +5,38 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.PendingorderActivity">
+    android:background="@drawable/admin"
+    tools:context=".ui.activity.PendingOrderActivity">
 
 
     <ImageView
         android:id="@+id/backBtn"
-        android:layout_width="33dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="43dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/textview29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="100dp"
         android:text="Pending Orders"
         android:textColor="@color/green"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toEndOf="@+id/backBtn"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pendingorderRecylerView"
+        android:id="@+id/PendingRecycleView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         tools:listitem="@layout/pending_order_items"
@@ -44,6 +44,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview29" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@ import com.example.hamro_currentnoodles.R
 import com.example.hamro_currentnoodles.adapter.PendingOrderAdapter
 import com.example.hamro_currentnoodles.databinding.ActivityPendingOrderBinding
 
-class PendingorderActivity : AppCompatActivity() {
+class PendingOrderActivity : AppCompatActivity() {
     private lateinit var binding:ActivityPendingOrderBinding
 
 
