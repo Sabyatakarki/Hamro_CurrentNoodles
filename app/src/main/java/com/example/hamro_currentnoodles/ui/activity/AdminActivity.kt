@@ -18,11 +18,6 @@ class AdminActivity : AppCompatActivity() {
         binding = ActivityAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.AddItem.setOnClickListener{
-            val intent = Intent(this,AddItemActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.AdminProfile.setOnClickListener{
             val intent = Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
@@ -30,6 +25,10 @@ class AdminActivity : AppCompatActivity() {
 
         binding.LogOut.setOnClickListener{
             val intent = Intent(this,UserLoginActivity::class.java)
+            startActivity(intent)
+        }
+        binding.PendingOrder.setOnClickListener {
+            val intent = Intent(this,PendingOrderActivity::class.java)
             startActivity(intent)
         }
 
