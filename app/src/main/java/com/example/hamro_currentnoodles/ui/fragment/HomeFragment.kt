@@ -19,6 +19,7 @@ class HomeFragment : Fragment() {
     private lateinit var verticalAdapter: VerticalNoodlesAdapter
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
@@ -40,6 +41,7 @@ class HomeFragment : Fragment() {
         horizontalAdapter = NoodleAdapter(horizontalNoodleList)
         horizontalRecyclerView.adapter = horizontalAdapter
 
+
         // Initialize Vertical RecyclerView
         verticalRecyclerView = view.findViewById(R.id.VerticalRecycleView)
         verticalRecyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -56,5 +58,5 @@ class HomeFragment : Fragment() {
         verticalRecyclerView.adapter = verticalAdapter
 
         return view
+        }
     }
-}

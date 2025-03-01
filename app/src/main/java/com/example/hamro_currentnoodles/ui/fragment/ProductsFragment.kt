@@ -27,25 +27,21 @@ class ProductsFragment : Fragment() {
 
 
 
-        val cartFoodName = listOf( "ChessySpicyFlavo","3xChickenFlavor","hot Flavor","Lemon flavor","2x spicy")
-        val cartItemPrice = listOf( "NPR 55","NPR 50","NPR 50","NPR 55","NPR 50")
+        val cartFoodName = listOf( "ChessySpicyFlavo","3xChickenFlavor","hot Flavor","Lemon flavor","2x spicy","ChesseBalls")
+        val cartItemPrice = listOf( "NPR 55","NPR 50","NPR 50","NPR 55","NPR 50","NPR 50")
         val cartImage = listOf(
             R.drawable.pinkcurrent,
             R.drawable.threex,
             R.drawable.hot,
             R.drawable.lemom,
             R.drawable.twoxspicy,
+            R.drawable.cheesyballs
         )
         val adapter = CardAdapter(ArrayList(cartFoodName),ArrayList(cartItemPrice),ArrayList(cartImage))
         binding.ProductRecycle.layoutManager = LinearLayoutManager(requireContext())
         binding.ProductRecycle.adapter = adapter
         return binding.root
         return inflater.inflate(R.layout.fragment_products, container, false)
-    }
-
-    companion object {
-
-
     }
 }
 
