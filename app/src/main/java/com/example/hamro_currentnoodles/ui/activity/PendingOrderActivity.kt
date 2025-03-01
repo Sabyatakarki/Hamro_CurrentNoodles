@@ -39,8 +39,8 @@ class PendingOrderActivity : AppCompatActivity() {
         val orderedFoodImage = arrayListOf(R.drawable.hot,R.drawable.cheesyballs,R.drawable.cheesychicken)
 
         val adapter = PendingOrderAdapter(orderedcustomerName, orderedQuantity,orderedFoodImage, this)
-        binding.pendingorderRecylerView.adapter = adapter
-        binding.pendingorderRecylerView.layoutManager = LinearLayoutManager(this)
+        binding.PendingRecycleView.adapter = adapter
+        binding.PendingRecycleView.layoutManager = LinearLayoutManager(this)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
