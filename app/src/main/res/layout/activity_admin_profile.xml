@@ -6,7 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/admin"
-    tools:context=".ui.activity.AdminProfileActivity">
+    tools:context=".ui.activity.AdminActivity">
+
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="43dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Username"
