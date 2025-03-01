@@ -116,14 +116,14 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun logout() {
+    private fun logout(){
         val userId = firebaseAuth.currentUser?.uid
 
         // Check if the user is logged in
         if (userId != null) {
             // Delete user data from Firebase Realtime Database
             databaseReference.child(userId).removeValue().addOnCompleteListener { task ->
-                if (task.isSuccessful) {
+                if (task.isSuccessful){
                     // Now sign out the user
                     firebaseAuth.signOut()
                     Toast.makeText(context, "Logged out and user data deleted", Toast.LENGTH_SHORT).show()
