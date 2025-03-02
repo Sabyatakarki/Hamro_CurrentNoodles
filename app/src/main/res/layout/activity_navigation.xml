@@ -12,7 +12,7 @@
         android:layout_width="408dp"
         android:layout_height="102dp"
         android:layout_marginBottom="4dp"
-        android:background="@color/beige"
+        android:background="@color/green"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

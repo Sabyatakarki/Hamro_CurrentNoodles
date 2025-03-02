@@ -15,30 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/circularImg"
-            android:layout_width="164dp"
-            android:layout_height="156dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/circular_shape"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/imageplaceholder"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout6"
             android:layout_width="409dp"
-            android:background="@drawable/shape"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="181dp"
             android:layout_marginEnd="1dp"
+            android:background="@drawable/roundedittext"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/circularImg">
+            app:layout_constraintTop_toBottomOf="@+id/logOut">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ProfileEmail"
@@ -53,14 +38,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="29dp"
             android:layout_marginEnd="1dp"
-            android:background="@drawable/shape"
+            android:background="@drawable/roundedittext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ProfileUsername"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="54dp"
                 android:hint="Username" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +53,7 @@
             android:id="@+id/textInputLayout8"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="29dp"
             android:layout_marginEnd="1dp"
             android:background="@drawable/shape"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,12 +83,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="4dp"
             android:backgroundTint="@color/green"
             android:text="LogOut"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ProfileHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:layout_marginEnd="93dp"
+            android:text="Manage your profile"
+            android:textColor="@color/green"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logOut" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
